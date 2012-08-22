@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 22, 2012 at 10:54 AM
+-- Generation Time: Aug 22, 2012 at 12:11 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -24,6 +24,23 @@ USE `cakephptutorial`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(40) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `categories`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -33,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `body` text,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
+  `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -40,10 +58,10 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
-(1, 'The title', 'This is the post body.', '2012-08-21 13:46:54', NULL),
-(2, 'A title once again', 'And the post body follows.', '2012-08-21 13:46:54', NULL),
-(3, 'Title strikes back', 'This is really exciting! Not.', '2012-08-21 13:46:54', NULL);
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`, `category_id`) VALUES
+(1, 'The title', 'This is the post body.', '2012-08-21 13:46:54', NULL, 0),
+(2, 'A title once again', 'And the post body follows.', '2012-08-21 13:46:54', NULL, 0),
+(3, 'Title strikes back', 'This is really exciting! Not.', '2012-08-21 13:46:54', NULL, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
